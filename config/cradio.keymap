@@ -24,6 +24,11 @@
     //  flavor = "tap-preferred";
     tapping_term_ms = <200>;
 };
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+    /delete-property/ ignore-modifiers;
+};
 
 / { 
     macros {
@@ -36,17 +41,45 @@
 		    bindings
 			    = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
 			};
-        ray: ray {
-            label = "raycast";
+        agave: agave {
+            label = "ZM_agave";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp SPC>
-                , <&macro_release &kp LALT>
-                ;
-        };
-        // create more macros here
+            bindings 
+                = <&kp A &kp G &kp A &kp V &kp E &kp RET>;
+            };
+        sol: sol {
+            label = "ZM_sol";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings 
+                = <&kp S &kp O &kp L &kp RET>;
+            };
+        sui: sui {
+            label = "ZM_sui";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings 
+                = <&kp COLON &kp S &kp U &kp I>;
+            };        
+        sus: sus {
+            label = "ZM_sui";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings 
+                = <&kp COLON &kp S &kp U &kp S>;
+            };
+        sua: sua {
+            label = "ZM_sui";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings 
+                = <&kp COLON &kp S &kp U &kp A>;
+            };
+        // end macros
+
+
+
 
 		};
         // Combos Keys # Reference
@@ -76,10 +109,10 @@
             key-positions = <17 16>;
             bindings = <&kp RALT>;
         };
-            // R T
+            // W T
             combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
+            timeout-ms = <100>;
+            key-positions = <1 4>;
             bindings = <&ray>;
         }; 
             // S D
@@ -112,92 +145,92 @@
                 compatible = "zmk,keymap";
         // Base Layer 
         // --------------------------------------------------------------------------------------------------------------------
-        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    |    P    |
-		// |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |    L    |    ;    |
+        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    | BkSPC P |
+		// |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |  NUM L  |    ;    |
 		// |   Z    |    X    |    C    |    V    |    B    | 				|    N    |    M    |    ,    |    .    |    /    |
 		//                              |  LCMD   |  ENTER  |				|  SPACE  |   NUM   |
 		// --------------------------------------------------------------------------------------------------------------------       
        	    base_layer {
 		bindings = <
-		&kp Q      &kp W      &kp E     &kp R     &kp T 					&kp Y     &kp U     &kp I    &kp O    &mt BSLH P 
-		&kp A      &kp S      &kp D     &kp F     &kp G 			        &kp H     &kp J     &kp K    &kp L    &kp QUOT
-		&mt LSFT Z &kp X      &kp C     &kp V     &kp B				        &kp N     &kp M     &kp CMMA &kp DOT  &kp FSLH
-          				                &kp LCMD  &kp RET   				&kp SPC   &to NUM 
+		&kp Q      &kp W        &kp E        &mt LG(SPACE) R &kp T 			 &kp Y     &kp U     &kp I    &kp O      &mt BSPC P 
+		&kp A      &kp S        &kp D        &kp F           &kp G 			 &kp H     &kp J     &kp K    &lt NUM L  &kp QUOT
+		&mt LSFT Z &mt LG(X) X  &mt LG(V) C  &mt LG(V) V     &kp B		     &kp N     &kp M     &kp CMMA &kp DOT    &kp FSLH
+          				                    &kp LCMD         &kp RET   	     &kp SPACE &to NUM 
 		>;
 		};
         // Numbers and navigation
         // --------------------------------------------------------------------------------------------------------------------
-        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    |    P    |
-		// |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |    L    |    ;    |
-		// |   Z    |    X    |    C    |    V    |    B    | 				|    N    |    M    |    ,    |    .    |    /    |
+        // |   1    |    2    |    3    |    4    |    5    |               |    6    |    7    |    8    |    9    |    0    |
+		// |  ALT   |   GUI   |  SHIFT  |   CRTL  |   RALT  |               |  Left   |  Down   |    UP   |  Right  |    "    |
+		// |CapsWord|         |         |   ESC   |   TAB   | 				|    ~    |    =    |    +    |    -    |    \    |
 		//                              |  BASE   |  ENTER  |				|  SPACE  |   SYM   |
 		// --------------------------------------------------------------------------------------------------------------------
        	    num_layer {
 		bindings = <
-		&kp NUM_1  &kp NUM_2   &kp NUM_3   &kp NUM_4    &kp NUM_5		    &kp NUM_6   &kp NUM_7   &kp NUM_8   &kp NUM_9   &kp NUM_0 
-		&kp TAB    &kp LC(S)   &kp DQT     &kp PIPE2    &kp HASH 		    &kp MINUS   &kp EQL     &kp LBKT    &kp RBKT    &kp DEL 
-		&kp ESC    &kp TILDE   &kp BSLH    &kp HASH     &kp TILDE2 	        &kp MINUS   &kp GRAVE   &kp LBKT    &kp RBKT    &kp DEL 
-					                       &to BASE     &kp RET  			&kp SPC     &to SYM 
+		&kp NUM_1  &kp NUM_2   &kp NUM_3   &kp NUM_4    &kp NUM_5		    &kp NUM_6   &kp NUM_7    &kp NUM_8   &kp NUM_9    &kp NUM_0 
+		&sk LALT   &sk LCMD    &sk LSHFT   &sk LCTL     &sk RALT 		    &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT    &kp DQT 
+		&kp ESC    &kp none    &none       &kp ESC      &kp TAB 	        &kp TILDE   &kp KP_EQUAL &kp KP_PLUS &kp KP_MINUS &kp BSLH 
+					                       &to BASE     &kp RET  			&kp SPACE   &to SYM 
 		>;
 		};
 		// Symbols layer
         // --------------------------------------------------------------------------------------------------------------------
-        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    |    P    |
-		// |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |    L    |    ;    |
-		// |   Z    |    X    |    C    |    V    |    B    | 				|    N    |    M    |    ,    |    .    |    /    |
+        // |   !    |    @    |    #    |    $    |    %    |               |    ^    |    &    |    *    |    (    |    )    |
+		// |   `    |    ~    |    |    |    \    |    /    |               |         |         |    <    |    {    |    }    |
+		// |        |         |         |         |         | 				|         |         |    >    |    [    |    ]    |
 		//                              |  BASE   |  ENTER  |				|  SPACE  |   FUNC  |
 		// --------------------------------------------------------------------------------------------------------------------
 		    sym_layer {
 		bindings = <
-		&kp BANG   &kp ATSN   &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT  &kp AMPS     &kp KMLT  &kp LPRN   &kp RPRN 
-		&kp HASH   &kp QMARK  &kp FSLH   &kp COLN   &kp SCLN 			    &kp MINUS &kp KP_EQUAL &kp LBRC  &kp RBRC   &kp BKSP
-		&kp LSFT   &kp KPLS   &kp LBKT   &kp RBKT   &kp BSLH    			&kp UNDER &kp LEFT     &kp DOWN  &kp UP     &kp RIGHT
-					                     &to BASE   &kp RET  				&kp SPC   &to FUNC 
+		&kp BANG   &kp ATSN   &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT   &kp AMPS     &kp KMLT  &kp LPRN   &kp RPRN 
+		&kp HASH   &kp QMARK  &kp FSLH   &kp COLN   &kp SCLN 			    &kp MINUS  &kp KP_EQUAL &kp LBRC  &kp RBRC   &kp BKSP
+		&kp LSFT   &kp KPLS   &kp LBKT   &kp RBKT   &kp BSLH    			&kp UNDER  &kp LEFT     &kp DOWN  &kp UP     &kp RIGHT
+					                     &to BASE   &kp RET  				&kp SPACE  &to FUNC 
 		>;
 		};	
 		// Functions
         // --------------------------------------------------------------------------------------------------------------------
-        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    |    P    |
-		// |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |    L    |    ;    |
-		// |   Z    |    X    |    C    |    V    |    B    | 				|    N    |    M    |    ,    |    .    |    /    |
+        // |   F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |   F10   |
+		// |        |         |         |         |         |               |         |         |         |   F11   |   F12   |
+		// |        |         |         |         |         | 				|         |         |         |         |         |
 		//                              |  BASE   |  ENTER  |				|  SPACE  |  MACRO  |
 		// --------------------------------------------------------------------------------------------------------------------
 		    func_layer {
 		bindings = <
-		&kp NUM_1   &kp NUM_2   &kp NUM_3   &kp NUM_4   &kp NUM_5 			  &trans   &trans     &trans       &trans     &trans
-		&kp F1      &kp F2      &kp F3      &kp F4      &kp F5  			  &trans   &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans 
-		&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6      &kp F7   			  &trans   &kp PG_DN  &kp K_VOL_DN &trans     &trans   
-					                        &to BASE    &kp RET  			  &kp SPC   &to MACRO 
+		&kp F1      &kp F2      &kp F3      &kp F4      &kp F5  			  &kp F6     &kp F7     &kp F8       &kp F9     &kp F10
+		&none       &none       &none       &none       &none  			      &none      &none      &none        &kp F11    &kp F12 
+		&none       &none       &none       &none       &none  			      &none      &none      &none        &trans     &trans   
+					                        &to BASE    &kp RET  			  &kp SPACE  &to MACRO 
 		>;
 		};	
         // Macro
         // --------------------------------------------------------------------------------------------------------------------
-        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    |    P    |
-		// |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |    L    |    ;    |
-		// |   Z    |    X    |    C    |    V    |    B    | 				|    N    |    M    |    ,    |    .    |    /    |
-		//                              |  BASE  |  ENTER  |				|  SPACE  | SETTINGS |
+        // |        |         |         |         |         |               |         |         |         |         | unstick |
+		// |  Agave |   Sol   |  :SUI   |  :SUA   |  :SUA   |               |         |         |         |         |         |
+		// |        |         |         |         |   ray   | 				|         |         |         |         |         |
+		//                              |  BASE   |  ENTER  |				|  SPACE  | SETTINGS |
 		// --------------------------------------------------------------------------------------------------------------------
 		    macro_layer {
 		bindings = <
-		&kp NUM_1   &kp NUM_2   &kp NUM_3   &kp NUM_4   &kp NUM_5 			&trans   &trans   &trans   &trans   &trans
-		&kp F1      &kp F2      &kp F3      &kp F4      &kp F5  			&trans   &trans   &trans   &trans   &trans 
-		&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6      &kp F7   		    &trans   &trans   &trans   &trans   &trans   
-					                        &to BASE    &kp RET  			&kp SPC   &to SETTINGS 
+		&none       &none       &none       &none       &none     		&none       &none       &none       &none       &unstick
+		&agave      &sol        &sui        &sus        &sua   			&none       &none       &none       &none       &none 
+		&none       &none       &none       &none       &ray     		&none       &none       &none       &none       &none  
+					                        &to BASE    &kp RET  		&kp SPACE   &to SETTINGS 
 		>;
 		};
         // Settings
         // --------------------------------------------------------------------------------------------------------------------
-        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    |    P    |
-		// |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |    L    |    ;    |
-		// |   Z    |    X    |    C    |    V    |    B    | 				|    N    |    M    |    ,    |    .    |    /    |
+        // |BootLdr |         |         |  BT_CLR |  BT 0   |               |   BT 3  |         |         |         |         |
+		// |        |         |         |         |  BT 1   |               |   BT 4  |         |         |         |         |
+		// | BT_CLR | BT_NXT  | BT_PREV |         |  BT 2   | 				|   BT 5  |         |         |         |         |
 		//                              |  BASE   |  ENTER  |				|  SPACE  |  TRANS  |
 		// --------------------------------------------------------------------------------------------------------------------
 		    ble_layer {
 		bindings = <
-		&bootloader &none       &none       &bt BT_CLR  &bt BT_SEL 0 			&bt BT_SEL 3   &trans   &trans   &trans   &unstick
-		&kp F1      &kp F2      &kp F3      &kp F4      &bt BT_SEL 1  			&bt BT_SEL 4   &trans   &trans   &trans   &trans 
-		&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6      &bt BT_SEL 2  		    &bt BT_SEL 5   &trans   &trans   &trans   &trans   
-					                        &to BASE    &kp RET  			    &kp SPC  &trans 
+		&bootloader &none       &none       &bt BT_CLR  &bt BT_SEL 0 			&bt BT_SEL 3   &none    &none    &none     &none
+		&none       &none       &none       &none       &bt BT_SEL 1  			&bt BT_SEL 4   &none    &none    &none     &none 
+		&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &none       &bt BT_SEL 2  		    &bt BT_SEL 5   &none    &none    &none     &none   
+					                        &to BASE    &kp RET  			    &kp SPACE      &trans 
 		>;
 		};	
     };    
