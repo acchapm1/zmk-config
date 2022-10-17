@@ -169,7 +169,7 @@
 		bindings = <
 		&kp NUM_1  &kp NUM_2   &kp NUM_3   &kp NUM_4    &kp NUM_5		    &kp NUM_6   &kp NUM_7    &kp NUM_8   &kp NUM_9    &kp NUM_0 
 		&sk LALT   &sk LCMD    &sk LSHFT   &sk LCTL     &sk RALT 		    &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT    &kp DQT 
-		&kp ESC    &kp none    &none       &kp ESC      &kp TAB 	        &kp TILDE   &kp KP_EQUAL &kp KP_PLUS &kp KP_MINUS &kp BSLH 
+		&kp ESC    &none       &none       &kp ESC      &kp TAB 	        &kp TILDE   &kp EQUAL    &kp PLUS    &kp MINUS    &kp BSLH 
 					                       &to BASE     &kp RET  			&kp SPACE   &to SYM 
 		>;
 		};
@@ -182,9 +182,9 @@
 		// --------------------------------------------------------------------------------------------------------------------
 		    sym_layer {
 		bindings = <
-		&kp BANG   &kp ATSN   &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT   &kp AMPS     &kp KMLT  &kp LPRN   &kp RPRN 
-		&kp HASH   &kp QMARK  &kp FSLH   &kp COLN   &kp SCLN 			    &kp MINUS  &kp KP_EQUAL &kp LBRC  &kp RBRC   &kp BKSP
-		&kp LSFT   &kp KPLS   &kp LBKT   &kp RBKT   &kp BSLH    			&kp UNDER  &kp LEFT     &kp DOWN  &kp UP     &kp RIGHT
+		&kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT   &kp AMPS     &kp STAR  &kp LPRN   &kp RPRN 
+		&kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    &none      &none        &kp LT    &kp LBRC   &kp RBRC
+		&none      &none      &none      &none      &kp none    			&none      &none        &kp GT    &kp LBKT   &kp LBKT
 					                     &to BASE   &kp RET  				&kp SPACE  &to FUNC 
 		>;
 		};	
@@ -199,7 +199,7 @@
 		bindings = <
 		&kp F1      &kp F2      &kp F3      &kp F4      &kp F5  			  &kp F6     &kp F7     &kp F8       &kp F9     &kp F10
 		&none       &none       &none       &none       &none  			      &none      &none      &none        &kp F11    &kp F12 
-		&none       &none       &none       &none       &none  			      &none      &none      &none        &trans     &trans   
+		&none       &none       &none       &none       &none  			      &none      &none      &none        &none      &none   
 					                        &to BASE    &kp RET  			  &kp SPACE  &to MACRO 
 		>;
 		};	
