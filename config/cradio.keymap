@@ -184,7 +184,7 @@
 		bindings = <
 		&kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT   &kp AMPS     &kp STAR  &kp LPRN   &kp RPRN 
 		&kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    &none      &none        &kp LT    &kp LBRC   &kp RBRC
-		&none      &none      &none      &none      &kp none    			&none      &none        &kp GT    &kp LBKT   &kp LBKT
+		&none      &none      &none      &none      &none        			&none      &none        &kp GT    &kp LBKT   &kp LBKT
 					                     &to BASE   &kp RET  				&kp SPACE  &to FUNC 
 		>;
 		};	
