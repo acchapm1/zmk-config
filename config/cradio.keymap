@@ -77,9 +77,9 @@
             bindings 
                 = <&kp COLON &kp S &kp U &kp A>;
             };
-        // end macros
-
 		};
+    // end macros
+
         // Combos Keys # Reference
         // --------------------------------------------------------------------------------------------------------------------
         // |   0    |    1    |    2    |    3    |    4    |               |    5    |    6    |    7    |    8    |    9    |
@@ -145,14 +145,14 @@
         // --------------------------------------------------------------------------------------------------------------------
         // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    | BkSPC P |
 		// |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |  NUM L  |    ;    |
-		// |   Z    |    X    |    C    |    V    |    B    | 				|    N    |    M    |    ,    |    .    |    /    |
+		// |   Z    |    X    |    C    |    V    |    B    | 				|    N    | MACRO M |    ,    |    .    |    /    |
 		//                              |  LCMD   |  ENTER  |				|  SPACE  |   NUM   |
 		// --------------------------------------------------------------------------------------------------------------------       
        	    base_layer {
 		bindings = <
-		&kp Q      &kp W        &kp E        &mt LG(SPACE) R &kp T 			 &kp Y     &kp U     &kp I    &kp O      &mt BSPC P 
-		&kp A      &kp S        &kp D        &kp F           &kp G 			 &kp H     &kp J     &kp K    &lt NUM L  &kp QUOT
-		&mt LSFT Z &mt LG(X) X  &mt LG(V) C  &mt LG(V) V     &kp B		     &kp N     &kp M     &kp CMMA &kp DOT    &kp FSLH
+		&kp Q      &kp W        &kp E        &mt LG(SPACE) R &kp T 			 &kp Y     &kp U        &kp I    &kp O      &mt BSPC P 
+		&kp A      &kp S        &kp D        &kp F           &kp G 			 &kp H     &kp J        &kp K    &lt NUM L  &kp QUOT
+		&mt LSFT Z &mt LG(X) X  &mt LG(V) C  &mt LG(V) V     &kp B		     &kp N     &lt MACRO M  &kp CMMA &kp DOT    &kp FSLH
           				                    &kp LCMD         &kp RET   	     &kp SPACE &to NUM 
 		>;
 		};
