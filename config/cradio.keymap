@@ -16,8 +16,8 @@
     #define BASE 0
     #define NUM 1
     #define SYM 2
-    #define FUNC 3
-    #define MACRO 4
+    #define MACRO 3
+    #define FUNC 4
 	#define SETTINGS 5
 // -----------------
 
@@ -30,6 +30,7 @@
     quick-release;
     /delete-property/ ignore-modifiers;
 };
+
 
 / { 
     macros {
@@ -84,7 +85,7 @@
         // --------------------------------------------------------------------------------------------------------------------
         // |   0    |    1    |    2    |    3    |    4    |               |    5    |    6    |    7    |    8    |    9    |
 		// |   10   |    11   |    12   |    13   |    14   |               |    15   |    16   |    17   |    18   |    19   |
-		// |   20   |    21   |    22c  |    23   |    24   | 				|    25   |    26   |    27   |    28   |    29   |
+		// |   20   |    21   |    22   |    23   |    24   | 				|    25   |    26   |    27   |    28   |    29   |
 		//                              |    30   |    31   |				|    32   |    33   |
 		// -------------------------------------------------------------------------------------------------------------------- 
     combos {
@@ -106,12 +107,6 @@
             timeout-ms = <50>;
             key-positions = <17 16>;
             bindings = <&kp RALT>;
-        };
-            // W T
-            combo_lalt {
-            timeout-ms = <100>;
-            key-positions = <1 4>;
-            bindings = <&ray>;
         }; 
             // S D
             combo_lalt {
@@ -137,6 +132,12 @@
 			key-positions = <30 31>;
 			bindings = <&mo SETTINGS>;
 		};  
+            // C W
+            combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <22 1>;
+            bindings = <&caps_word>;
+        };
     };
 
         keymap {
@@ -183,7 +184,22 @@
 		&kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT   &kp AMPS     &kp STAR  &kp LPRN   &kp RPRN 
 		&kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    &none      &none        &kp LT    &kp LBRC   &kp RBRC
 		&none      &none      &none      &none      &none        			&none      &none        &kp GT    &kp LBKT   &kp LBKT
-					                     &to BASE   &kp RET  				&kp SPACE  &to FUNC 
+					                     &to BASE   &kp RET  				&kp SPACE  &to MACRO 
+		>;
+		};
+        // Macro
+        // --------------------------------------------------------------------------------------------------------------------
+        // |        |         |         |         |         |               |         |         |         |         | unstick |
+		// |  Agave |   Sol   |  :SUI   |  :SUA   |  :SUA   |               |         |         |         |         |         |
+		// |        |         |         |         |         | 				|         |         |         |         |         |
+		//                              |  BASE   |  ENTER  |				|  SPACE  | SETTINGS |
+		// --------------------------------------------------------------------------------------------------------------------
+		    macro_layer {
+		bindings = <
+		&none       &none       &none       &none       &none     		&none       &none       &none       &none       &unstick
+		&agave      &sol        &sui        &sus        &sua   			&none       &none       &none       &none       &none 
+		&none       &none       &none       &none       &none     		&none       &none       &none       &none       &none  
+					                        &to BASE    &kp RET  		&kp SPACE   &to FUNC 
 		>;
 		};	
 		// Functions
@@ -198,24 +214,9 @@
 		&kp F1      &kp F2      &kp F3      &kp F4      &kp F5  			  &kp F6     &kp F7     &kp F8       &kp F9     &kp F10
 		&none       &none       &none       &none       &none  			      &none      &none      &none        &kp F11    &kp F12 
 		&none       &none       &none       &none       &none  			      &none      &none      &none        &none      &none   
-					                        &to BASE    &kp RET  			  &kp SPACE  &to MACRO 
+					                        &to BASE    &kp RET  			  &kp SPACE  &to SETTINGS 
 		>;
 		};	
-        // Macro
-        // --------------------------------------------------------------------------------------------------------------------
-        // |        |         |         |         |         |               |         |         |         |         | unstick |
-		// |  Agave |   Sol   |  :SUI   |  :SUA   |  :SUA   |               |         |         |         |         |         |
-		// |        |         |         |         |         | 				|         |         |         |         |         |
-		//                              |  BASE   |  ENTER  |				|  SPACE  | SETTINGS |
-		// --------------------------------------------------------------------------------------------------------------------
-		    macro_layer {
-		bindings = <
-		&none       &none       &none       &none       &none     		&none       &none       &none       &none       &unstick
-		&agave      &sol        &sui        &sus        &sua   			&none       &none       &none       &none       &none 
-		&none       &none       &none       &none       &none     		&none       &none       &none       &none       &none  
-					                        &to BASE    &kp RET  		&kp SPACE   &to SETTINGS 
-		>;
-		};
         // Settings
         // --------------------------------------------------------------------------------------------------------------------
         // |BootLdr |         |         |  BT_CLR |  BT 0   |               |   BT 3  |         |         |         |         |
