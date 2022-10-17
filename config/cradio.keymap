@@ -37,7 +37,7 @@
 			    = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
 			};
         ray: ray {
-            label = "Raycast_App_Launcher";
+            label = "raycast";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -167,7 +167,7 @@
 		&kp NUM_1   &kp NUM_2   &kp NUM_3   &kp NUM_4   &kp NUM_5 			  &trans   &trans     &trans       &trans     &trans
 		&kp F1      &kp F2      &kp F3      &kp F4      &kp F5  			  &trans   &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans 
 		&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6      &kp F7   			  &trans   &kp PG_DN  &kp K_VOL_DN &trans     &trans   
-					                        &to BASE    &KP RET  			  &kp SPC   &to MACRO 
+					                        &to BASE    &kp RET  			  &kp SPC   &to MACRO 
 		>;
 		};	
         // Macro
@@ -182,7 +182,7 @@
 		&kp NUM_1   &kp NUM_2   &kp NUM_3   &kp NUM_4   &kp NUM_5 			&trans   &trans   &trans   &trans   &trans
 		&kp F1      &kp F2      &kp F3      &kp F4      &kp F5  			&trans   &trans   &trans   &trans   &trans 
 		&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6      &kp F7   		    &trans   &trans   &trans   &trans   &trans   
-					                        &to BASE    &KP RET  			&kp SPC   &to SETTINGS 
+					                        &to BASE    &kp RET  			&kp SPC   &to SETTINGS 
 		>;
 		};
         // Settings
@@ -197,7 +197,7 @@
 		&bootloader &none       &none       &bt BT_CLR  &bt BT_SEL 0 			&bt BT_SEL 3   &trans   &trans   &trans   &unstick
 		&kp F1      &kp F2      &kp F3      &kp F4      &bt BT_SEL 1  			&bt BT_SEL 4   &trans   &trans   &trans   &trans 
 		&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6      &bt BT_SEL 2  		    &bt BT_SEL 5   &trans   &trans   &trans   &trans   
-					                        &to BASE    &KP RET  			    &kp SPC  &trans 
+					                        &to BASE    &kp RET  			    &kp SPC  &trans 
 		>;
 		};	
     };    
