@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  * 
  * keymap by Alan Chapman - https://github.com/acchapm1/zmk-sweep-qwerty
- * 
+ * Board - Ferris Sweep v2.2
+ * Switches - Kailh Choc brown
  */
 
 #include <behaviors.dtsi>
@@ -77,9 +78,6 @@
                 = <&kp COLON &kp S &kp U &kp A>;
             };
         // end macros
-
-
-
 
 		};
         // Combos Keys # Reference
@@ -207,14 +205,14 @@
         // --------------------------------------------------------------------------------------------------------------------
         // |        |         |         |         |         |               |         |         |         |         | unstick |
 		// |  Agave |   Sol   |  :SUI   |  :SUA   |  :SUA   |               |         |         |         |         |         |
-		// |        |         |         |         |   ray   | 				|         |         |         |         |         |
+		// |        |         |         |         |         | 				|         |         |         |         |         |
 		//                              |  BASE   |  ENTER  |				|  SPACE  | SETTINGS |
 		// --------------------------------------------------------------------------------------------------------------------
 		    macro_layer {
 		bindings = <
 		&none       &none       &none       &none       &none     		&none       &none       &none       &none       &unstick
 		&agave      &sol        &sui        &sus        &sua   			&none       &none       &none       &none       &none 
-		&none       &none       &none       &none       &ray     		&none       &none       &none       &none       &none  
+		&none       &none       &none       &none       &none     		&none       &none       &none       &none       &none  
 					                        &to BASE    &kp RET  		&kp SPACE   &to SETTINGS 
 		>;
 		};
