@@ -30,12 +30,22 @@
 		// sometimes my device thinks a modifier is being held down
 		// pressing all modifiers fixes it.
 		unstick: unstick {
-		label = "ZM_unstick";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-			= <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+		    label = "ZM_unstick";
+		    compatible = "zmk,behavior-macro";
+		    #binding-cells = <0>;
+		    bindings
+			    = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
 			};
+        ray: ray {
+            label = "Raycast_App_Launcher";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp SPC>
+                , <&macro_release &kp LALT>
+                ;
+        };
         // create more macros here
 
 		};
@@ -66,6 +76,12 @@
             key-positions = <17 16>;
             bindings = <&kp RALT>;
         };
+            // R T
+            combo_lalt {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&ray>;
+        }; 
             // S D
             combo_lalt {
             timeout-ms = <50>;
