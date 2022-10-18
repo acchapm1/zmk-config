@@ -1,0 +1,27 @@
+
+/*                KEY POSITIONS
+  ╭────────────────────╮ ╭────────────────────╮
+  │  0   1   2   3   4 │ │  5   6   7   8   9 │
+  │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
+  │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
+  ╰───────╮     30  31 │ │ 32  33     ╭───────╯
+          ╰────────────╯ ╰────────────╯            */
+
+compatible = "zmk,combos";
+
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <38>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+  };
+
+COMBO(esc, &kp ESC, 0 1)            // Q W
+COMBO(tab, &kp TAB, 10 11)          // A S
+COMBO(ralt, &kp RALT, 17 16)        // J K
+COMBO(lalt, &kp LALT, 11 12)        // S D
+COMBO(lcmd, &kp LGUI, 12 13)        // D F
+COMBO(rcmd, &kp RGUI, 17 18)        // K L
+COMBO(sett, &mo SETTINGS, 30 31)    // Left Thumb Keys
+COMBO(cw, &caps_word, 22 1)         // C W
+

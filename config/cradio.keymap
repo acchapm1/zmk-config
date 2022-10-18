@@ -12,6 +12,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include "sweep.h"
 
 // Layer definitions
     #define BASE 0
@@ -35,122 +36,22 @@
     continue-list = <UNDERSCORE MINUS>;
 };
 
-/ { 
-    macros {
-		    // sometimes my device thinks a modifier is being held down
-		    // pressing all modifiers fixes it.
-		    unstick: unstick {
-		        label = "ZM_unstick";
-		        compatible = "zmk,behavior-macro";
-		        #binding-cells = <0>;
-		        bindings
-			          = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
-			      };
-        agave: agave {
-            label = "ZM_agave";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings 
-                = <&kp A &kp G &kp A &kp V &kp E &kp RET>;
-            };
-        sol: sol {
-            label = "ZM_sol";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings 
-                = <&kp S &kp O &kp L &kp RET>;
-            };
-        sui: sui {
-            label = "ZM_sui";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings 
-                = <&kp COLON &kp S &kp U &kp I>;
-            };        
-        sus: sus {
-            label = "ZM_sus";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings 
-                = <&kp COLON &kp S &kp U &kp S>;
-            };
-        sua: sua {
-            label = "ZM_sua";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings 
-                = <&kp COLON &kp S &kp U &kp A>;
-            };
-		};
-    // end macros
+macros {
+    #include "macros.dtsi"
+};
 
-        // Combos Keys # Reference
-        // --------------------------------------------------------------------------------------------------------------------
-        // |   0    |    1    |    2    |    3    |    4    |               |    5    |    6    |    7    |    8    |    9    |
-    		// |   10   |    11   |    12   |    13   |    14   |               |    15   |    16   |    17   |    18   |    19   |
-		    // |   20   |    21   |    22   |    23   |    24   | 				      |    25   |    26   |    27   |    28   |    29   |
-		    //                              |    30   |    31   |				        |    32   |    33   |
-		    // -------------------------------------------------------------------------------------------------------------------- 
-        combos {
-          compatible = "zmk,combos";
-            // Q W
-            combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-            // A S
-            combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-            // J K
-            combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
-        }; 
-            // S D
-            combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
-        };  
-            // D F
-            combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LGUI>;
-        };
-            // K L
-            combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
-        };
-            // both left thumb keys
-			      combo_settings {
-			      timeout-ms = <300>;
-			      key-positions = <30 31>;
-			      bindings = <&mo SETTINGS>;
-		    };  
-            // C W
-            combo_caps_word {
-            timeout-ms = <50>;
-            key-positions = <22 1>;
-            bindings = <&caps_word>;
-        };
-    };
+combos {
+    #include "combos.dtsi"
+};
 
         keymap {
                 compatible = "zmk,keymap";
-        // Base Layer 
-        // --------------------------------------------------------------------------------------------------------------------
-        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    | BkSPC P |
+            // Base Layer 
+            // --------------------------------------------------------------------------------------------------------------------
+            // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    | BkSPC P |
 		    // |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |  NUM L  |    ;    |
-		    // |   Z    |    X    |    C    |    V    |    B    | 				      |    N    | MACRO M |    ,    |    .    |    /    |
-		    //                              |  ENTER  |  LCMD   |				        |  NUM    |  SPACE  |
+		    // |   Z    |    X    |    C    |    V    |    B    | 				|    N    | MACRO M |    ,    |    .    |    /    |
+		    //                              |  ENTER  |  LCMD   |				|  NUM    |  SPACE  |
 		    // --------------------------------------------------------------------------------------------------------------------       
        	    base_layer {
 		    bindings = <
@@ -160,79 +61,79 @@
           				                          &kp RET         &kp LCMD   	 &to NUM   &kp SPACE 
 		    >;
 		  };
-        // Numbers and navigation
-        // --------------------------------------------------------------------------------------------------------------------
-        // |   1    |    2    |    3    |    4    |    5    |               |    6    |    7    |    8    |    9    |    0    |
+            // Numbers and navigation
+            // --------------------------------------------------------------------------------------------------------------------
+            // |   1    |    2    |    3    |    4    |    5    |               |    6    |    7    |    8    |    9    |    0    |
 		    // |  ALT   |   GUI   |  SHIFT  |   CRTL  |   RALT  |               |  Left   |  Down   |    UP   |  Right  |    "    |
-		    // |CapsWord|         |         |   ESC   |   TAB   | 				      |    ~    |    =    |    +    |    -    |    \    |
-		    //                              |  ENTER  |   BASE  |				        |   SYM   |  SPACE  |
+		    // |CapsWord|         |         |   ESC   |   TAB   | 				|    ~    |    =    |    +    |    -    |    \    |
+		    //                              |  ENTER  |   BASE  |				|   SYM   |  SPACE  |
 		    // --------------------------------------------------------------------------------------------------------------------
        	    num_layer {
 		    bindings = <
 		    &kp N1     &kp N2      &kp N3      &kp N4       &kp N5   		    &kp N6      &kp N7       &kp N8      &kp N9       &kp N0 
 		    &sk LALT   &sk LCMD    &sk LSHFT   &sk LCTL     &sk RALT 		    &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT    &kp DQT 
-		    &kp ESC    &none       &none       &kp ESC      &kp TAB 	      &kp TILDE   &kp EQUAL    &kp PLUS    &kp MINUS    &kp BSLH 
-					                                 &kp RET      &to BASE   	    &to SYM     &kp SPACE 
+		    &kp ESC    xxx         xxx         &kp ESC      &kp TAB 	        &kp TILDE   &kp EQUAL    &kp PLUS    &kp MINUS    &kp BSLH 
+					                           &kp RET      &to BASE   	        &to SYM     &kp SPACE 
 		    >;
 		  };
 		    // Symbols layer
-        // --------------------------------------------------------------------------------------------------------------------
-        // |   !    |    @    |    #    |    $    |    %    |               |    ^    |    &    |    *    |    (    |    )    |
+            // --------------------------------------------------------------------------------------------------------------------
+            // |   !    |    @    |    #    |    $    |    %    |               |    ^    |    &    |    *    |    (    |    )    |
 		    // |   `    |    ~    |    |    |    \    |    /    |               |         |         |    <    |    {    |    }    |
-		    // |        |         |         |         |         | 				      |         |         |    >    |    [    |    ]    |
-		    //                              |  ENTER  |   BASE  |				        |  MACRO  |  SPACE  |
+		    // |        |         |         |         |         | 				|         |         |    >    |    [    |    ]    |
+		    //                              |  ENTER  |   BASE  |				|  MACRO  |  SPACE  |
 		    // --------------------------------------------------------------------------------------------------------------------
 		        sym_layer {
 		    bindings = <
 		    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT   &kp AMPS     &kp STAR  &kp LPRN   &kp RPRN 
-		    &kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    &none      &none        &kp LT    &kp LBRC   &kp RBRC
-		    &none      &none      &none      &none      &none        			&none      &none        &kp GT    &kp LBKT   &kp RBKT
-					                               &kp RET    &to BASE  	    	&to MACRO  &kp SPACE 
+		    &kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    xxx      xxx        &kp LT    &kp LBRC   &kp RBRC
+		    xxx        xxx        xxx        xxx        xxx        			    xxx      xxx        &kp GT    &kp LBKT   &kp RBKT
+					                         &kp RET    &to BASE  	    	    &to MACRO  &kp SPACE 
 		    >;
 		  };
-        // Macro
-        // --------------------------------------------------------------------------------------------------------------------
-        // |        |         |         |         |         |               |         |         |         |         | unstick |
+            // Macro
+            // --------------------------------------------------------------------------------------------------------------------
+            // |        |         |         |         |         |               |         |         |         |         | unstick |
 		    // |  Agave |   Sol   |  :SUI   |  :SUS   |  :SUA   |               |         |         |         |         |         |
-		    // |        |         |         |         |         | 				      |         |         |         |         |         |
-		    //                              |  ENTER  |   BASE  |				        |  FUNC   |  SPACE  |
+		    // |        |         |         |         |         | 				|         |         |         |         |         |
+		    //                              |  ENTER  |   BASE  |				|  FUNC   |  SPACE  |
 		    // --------------------------------------------------------------------------------------------------------------------
 		        macro_layer {
 		    bindings = <
-		    &none       &none       &none       &none       &none     		&none       &none       &none       &none       &unstick
-		    &agave      &sol        &sui        &sus        &sua   			  &none       &none       &none       &none       &none 
-		    &none       &none       &none       &none       &none     		&none       &none       &none       &none       &none  
-				  	                                &kp RET     &to BASE  		&to FUNC    &kp SPACE 
+		    xxx       xxx       xxx       xxx       xxx     		xxx       xxx       xxx       xxx       &unstick
+		    &agave    &sol      &sui      &sus      &sua   			xxx       xxx       xxx       xxx       xxx 
+		    xxx       xxx       xxx       xxx       xxx     		xxx       xxx       xxx       xxx       xxx  
+				  	                      &kp RET   &to BASE  		&to FUNC    &kp SPACE 
 		    >;
 		  };	
 		    // Functions
-        // --------------------------------------------------------------------------------------------------------------------
-        // |   F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |   F10   |
+            // --------------------------------------------------------------------------------------------------------------------
+            // |   F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |   F10   |
 		    // |        |         |         |         |         |               |         |         |         |   F11   |   F12   |
-		    // |        |         |         |         |         | 				      |         |         |         |         |         |
-		    //                              |  ENTER  |   BASE  |				        |    SET  |  SPACE  |
+		    // |        |         |         |         |         | 				|         |         |         |         |         |
+		    //                              |  ENTER  |   BASE  |				|    SET  |  SPACE  |
 		    // --------------------------------------------------------------------------------------------------------------------
 		        func_layer {
 		    bindings = <
-		    &kp F1      &kp F2      &kp F3      &kp F4      &kp F5  			    &kp F6     &kp F7     &kp F8       &kp F9     &kp F10
-		    &none       &none       &none       &none       &none  			      &none      &none      &none        &kp F11    &kp F12 
-		    &none       &none       &none       &none       &none  			      &none      &none      &none        &none      &none   
-					                                  &kp RET     &to BASE  			  &to SETTINGS  &kp SPACE 
+		    &kp F1    &kp F2    &kp F3    &kp F4    &kp F5  			&kp F6     &kp F7     &kp F8     &kp F9     &kp F10
+		    xxx       xxx       xxx       xxx       xxx  			    xxx        xxx        xxx        &kp F11    &kp F12 
+		    xxx       xxx       xxx       xxx       xxx  			    xxx        xxx        xxx        xxx        xxx   
+					                      &kp RET   &to BASE  			&to SETTINGS  &kp SPACE 
 		    >;
 		  };	
-        // Settings
-        // --------------------------------------------------------------------------------------------------------------------
-        // |BootLdr |         |         |  BT_CLR |  BT 0   |               |   BT 3  |         |         |         |         |
-		    // |        |         |         |         |  BT 1   |               |   BT 4  |         |         |         |         |
-		    // | BT_CLR | BT_NXT  | BT_PREV |         |  BT 2   | 				      |   BT 5  |         |         |         |         |
-		    //                              |  ENTER  |  BASE   |				        |   None  |  SPACE  |
+            // Settings
+            // --------------------------------------------------------------------------------------------------------------------
+            // |BootLdr |         |         |  BT_CLR |  BT 0   |               |         |         |         |         |         |
+		    // |        |         |         |         |  BT 1   |               |         |         |         |         |         |
+		    // | BT_CLR | BT_NXT  | BT_PREV |         |  BT 2   | 				|         |         |         |         |         |
+		    //                              |  ENTER  |  BASE   |				|         |  SPACE  |
 		    // --------------------------------------------------------------------------------------------------------------------
 		        ble_layer {
 		    bindings = <
-		    &bootloader &none       &none       &bt BT_CLR  &bt BT_SEL 0 			&bt BT_SEL 3   &none    &none    &none     &none
-		    &none       &none       &none       &none       &bt BT_SEL 1  		&bt BT_SEL 4   &none    &none    &none     &none 
-		    &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &none       &bt BT_SEL 2  		&bt BT_SEL 5   &none    &none    &none     &none   
-					                                  &kp RET     &to BASE 			    &none      &kp SPACE 
+		    &bootloader xxx         xxx         bTClr       bT1 		    xxx     xxx         xxx    xxx     xxx
+		    xxx         xxx         xxx         xxx         bT2  		    xxx     xxx         xxx    xxx     xxx 
+		    bTClr       bTNxt       bTPrv       xxx         bT3  		    xxx     xxx         xxx    xxx     xxx   
+					                            &kp RET     &to BASE 		xxx     &kp SPACE 
 		    >;
 		  };	
     };    
