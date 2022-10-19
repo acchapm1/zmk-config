@@ -24,4 +24,16 @@ COMBO(lcmd, &kp LGUI, 12 13)        // D F
 COMBO(rcmd, &kp RGUI, 17 18)        // K L
 COMBO(sett, &mo SETTINGS, 30 31)    // Left Thumb Keys
 COMBO(cw, &caps_word, 22 1)         // C W
+COMBO(crtl, &sk LCTRL, 14 13)       // F D - Sticky Ctrl
+COMBO(cmd, &sk LGUI, 14 12)         // F S - Sticky CMD
+COMBO(alt, &sk LALT, 14 11)         // F A - Sticky alt
+COMBO(ctlspr, &sk LC(LGUI))         // F D S - Sticky Crtl + Super
+
+
+/*
+F + D = ctrl
+F + S = super
+F + A = alt
+F + D + S = ctrl + super
+*/
 

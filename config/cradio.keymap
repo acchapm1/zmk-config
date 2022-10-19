@@ -23,9 +23,10 @@
 	#define SETTINGS 5
 // -----------------
 
+
 &mt {
-    //  flavor = "tap-preferred";
-    tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+    tapping_term_ms = <300>;
 };
 &sk {
     release-after-ms = <2000>;
@@ -35,103 +36,133 @@
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
-macros {
-    #include "macros.dtsi"
-};
-combos {
-    #include "combos.dtsi"
-};
-        keymap {
-                compatible = "zmk,keymap";
-            // Base Layer 
-            // --------------------------------------------------------------------------------------------------------------------
-            // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    | BkSPC P |
-		    // |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |  NUM L  |    ;    |
-		    // |   Z    |    X    |    C    |    V    |    B    | 				|    N    | MCRO M |    ,    |    .    |    /    |
-		    //                              |  ENTER  |  LCMD   |				|  NUM    |  SPACE  |
-		    // --------------------------------------------------------------------------------------------------------------------       
-       	    base_layer {
-		    bindings = <
-		    &kp Q      &kp W        &kp E       &mt LA(SPACE) R &kp T 			 &kp Y     &kp U        &kp I    &kp O      &mt BSPC P 
-		    &kp A      &kp S        &kp D       &kp F           &kp G 			 &kp H     &kp J        &kp K    &lt NUM L  &kp QUOT
-		    &mt LSFT Z &mt LG(X) X  &mt LG(C) C &mt LG(V) V     &kp B		     &kp N     &lt MCRO M  &kp CMMA &kp DOT    &kp FSLH
-          				                          &kp RET         &kp LCMD   	 &to NUM   &kp SPACE 
-		    >;
-		  };
-            // Numbers and navigation
-            // --------------------------------------------------------------------------------------------------------------------
-            // |   1    |    2    |    3    |    4    |    5    |               |    6    |    7    |    8    |    9    |    0    |
-		    // |  ALT   |   GUI   |  SHIFT  |   CRTL  |   RALT  |               |  Left   |  Down   |    UP   |  Right  |    "    |
-		    // |CapsWord|         |         |   ESC   |   TAB   | 				|    ~    |    =    |    +    |    -    |    \    |
-		    //                              |  ENTER  |   BASE  |				|   SYM   |  SPACE  |
-		    // --------------------------------------------------------------------------------------------------------------------
-       	    num_layer {
-		    bindings = <
-		    &kp N1     &kp N2      &kp N3      &kp N4       &kp N5   		    &kp N6      &kp N7       &kp N8      &kp N9       &kp N0 
-		    &sk LALT   &sk LCMD    &sk LSHFT   &sk LCTL     &sk RALT 		    &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT    &kp DQT 
-		    &kp ESC    xxx         xxx         &kp ESC      &kp TAB 	        &kp TILDE   &kp EQUAL    &kp PLUS    &kp MINUS    &kp BSLH 
-					                           &kp RET      &to BASE   	        &to SYM     &kp SPACE 
-		    >;
-		  };
-		    // Symbols layer
-            // --------------------------------------------------------------------------------------------------------------------
-            // |   !    |    @    |    #    |    $    |    %    |               |    ^    |    &    |    *    |    (    |    )    |
-		    // |   `    |    ~    |    |    |    \    |    /    |               |         |         |    <    |    {    |    }    |
-		    // |        |         |         |         |         | 				|         |         |    >    |    [    |    ]    |
-		    //                              |  ENTER  |   BASE  |				|  MCRO  |  SPACE  |
-		    // --------------------------------------------------------------------------------------------------------------------
-		        sym_layer {
-		    bindings = <
-		    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT   &kp AMPS     &kp STAR  &kp LPRN   &kp RPRN 
-		    &kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    xxx      xxx        &kp LT    &kp LBRC   &kp RBRC
-		    xxx        xxx        xxx        xxx        xxx        			    xxx      xxx        &kp GT    &kp LBKT   &kp RBKT
-					                         &kp RET    &to BASE  	    	    &to MCRO  &kp SPACE 
-		    >;
-		  };
-            // Macro
-            // --------------------------------------------------------------------------------------------------------------------
-            // |        |         |         |         |         |               |         |         |         |         | unstick |
-		    // |  Agave |   Sol   |  :SUI   |  :SUS   |  :SUA   |               |         |         |         |         |         |
-		    // |        |         |         |         |         | 				|         |         |         |         |         |
-		    //                              |  ENTER  |   BASE  |				|  FUNC   |  SPACE  |
-		    // --------------------------------------------------------------------------------------------------------------------
-		        macro_layer {
-		    bindings = <
-		    xxx       xxx       xxx       xxx       xxx     		xxx       xxx       xxx       xxx       &unstick
-		    &agave    &sol      &sui      &sus      &sua   			xxx       xxx       xxx       xxx       xxx 
-		    xxx       xxx       xxx       xxx       xxx     		xxx       xxx       xxx       xxx       xxx  
-				  	                      &kp RET   &to BASE  		&to FUNC    &kp SPACE 
-		    >;
-		  };	
-		    // Functions
-            // --------------------------------------------------------------------------------------------------------------------
-            // |   F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |   F10   |
-		    // |        |         |         |         |         |               |         |         |         |   F11   |   F12   |
-		    // |        |         |         |         |         | 				|         |         |         |         |         |
-		    //                              |  ENTER  |   BASE  |				|    SET  |  SPACE  |
-		    // --------------------------------------------------------------------------------------------------------------------
-		        func_layer {
-		    bindings = <
-		    &kp F1    &kp F2    &kp F3    &kp F4    &kp F5  			&kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-		    xxx       xxx       xxx       xxx       xxx  			    xxx        xxx        xxx        &kp F11    &kp F12 
-		    xxx       xxx       xxx       xxx       xxx  			    xxx        xxx        xxx        xxx        xxx   
-					                      &kp RET   &to BASE  			&to SETTINGS  &kp SPACE 
-		    >;
-		  };	
-            // Settings
-            // --------------------------------------------------------------------------------------------------------------------
-            // |BootLdr |         |         |  BT_CLR |  BT 0   |               |         |         |         |         |         |
-		    // |        |         |         |         |  BT 1   |               |         |         |         |         |         |
-		    // | BT_CLR | BT_NXT  | BT_PREV |         |  BT 2   | 				|         |         |         |         |         |
-		    //                              |  ENTER  |  BASE   |				|         |  SPACE  |
-		    // --------------------------------------------------------------------------------------------------------------------
-		        ble_layer {
-		    bindings = <
-		    &bootloader xxx         xxx         bTClr       bT1 		    xxx     xxx         xxx    xxx     xxx
-		    xxx         xxx         xxx         xxx         bT2  		    xxx     xxx         xxx    xxx     xxx 
-		    bTClr       bTNxt       bTPrv       xxx         bT3  		    xxx     xxx         xxx    xxx     xxx   
-					                            &kp RET     &to BASE 		xxx     &kp SPACE 
-		    >;
-		  };	
-    };    
+
+// Aliases
+	#define CW &caps_word
+	#define BL &bootloader
+// -----------------
+
+/ {
+	behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+		bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BALANCED_HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+	macros {
+		#include "macros.dtsi"
+	};
+
+	combos {
+    	#include "combos.dtsi"
+	};
+	
+    keymap {
+            compatible = "zmk,keymap";
+        // Base Layer 
+        // --------------------------------------------------------------------------------------------------------------------
+        // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    | BkSPC P |
+	    // |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |  NUM L  |    ;    |
+	    // |   Z    |    X    |    C    |    V    |    B    | 				|    N    |  MCRO M |    ,    |    .    |    /    |
+	    //                              |  ENTER  |  LCMD   |				|  NUM    |  SPACE  |
+	    // --------------------------------------------------------------------------------------------------------------------       
+        base_layer {
+	    bindings = <
+	    &kp Q      &kp W        &kp E       &mt LA(SPACE) R &kp T 			 &kp Y     &kp U        &kp I    &kp O      &mt BSPC P 
+	    &kp A      &kp S        &kp D       &kp F           &kp G 			 &kp H     &kp J        &kp K    &lt NUM L  &kp QUOT
+	    &mt LSFT Z &mt LG(X) X  &mt LG(C) C &mt LG(V) V     &kp B		     &kp N     &lt MCRO M  &kp CMMA &kp DOT    &kp FSLH
+      				                          &kp RET       &kp LCMD   	     &to NUM   &kp SPACE 
+	    >;
+	  };
+        // Numbers and navigation
+        // --------------------------------------------------------------------------------------------------------------------
+        // |   1    |    2    |    3    |    4    |    5    |               |    6    |    7    |    8    |    9    |    0    |
+	    // |  ALT   |   GUI   |  SHIFT  |   CRTL  |   RALT  |               |  Left   |  Down   |    UP   |  Right  |    "    |
+	    // |CapsWord|         |         |   ESC   |   TAB   | 				|    ~    |    =    |    +    |    -    |    \    |
+	    //                              |  ENTER  |   BASE  |				|   SYM   |  SPACE  |
+	    // --------------------------------------------------------------------------------------------------------------------
+        num_layer {
+	    bindings = <
+	    &kp N1     &kp N2      &kp N3      &kp N4       &kp N5   		    &kp N6      &kp N7       &kp N8      &kp N9       &kp N0 
+	    &sk LALT   &sk LCMD    &sk LSHFT   &sk LCTL     &sk RALT 		    &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT    &kp DQT 
+	    &kp ESC    &kp xxx     &kp xxx     &kp ESC      &kp TAB 	        &kp TILDE   &kp EQUAL    &kp PLUS    &kp MINUS    &kp BSLH 
+				                           &kp RET      &to BASE   	        &to SYM     &kp SPACE 
+	    >;
+	  };
+	    // Symbols layer
+        // --------------------------------------------------------------------------------------------------------------------
+        // |   !    |    @    |    #    |    $    |    %    |               |    ^    |    &    |    *    |    (    |    )    |
+	    // |   `    |    ~    |    |    |    \    |    /    |               |         |         |    <    |    {    |    }    |
+	    // |        |         |         |         |         | 				|         |         |    >    |    [    |    ]    |
+	    //                              |  ENTER  |   BASE  |				|  MCRO  |  SPACE  |
+	    // --------------------------------------------------------------------------------------------------------------------
+	        sym_layer {
+	    bindings = <
+	    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT     &kp AMPS     &kp STAR  &kp LPRN   &kp RPRN 
+	    &kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    &kp xxx      &kp xxx      &kp LT    &kp LBRC   &kp RBRC
+	    &kp xxx    &kp xxx    &kp xxx    &kp xxx    &kp xxx        			&kp xxx      &kp xxx      &kp GT    &kp LBKT   &kp RBKT
+				                         &kp RET    &to BASE  	    	    &to MCRO  &kp SPACE 
+	    >;
+	  };
+        // Macro
+        // --------------------------------------------------------------------------------------------------------------------
+        // |        |         |         |         |         |               |         |         |         |         | unstick |
+	    // |  Agave |   Sol   |  :SUI   |  :SUS   |  :SUA   |               |         |         |         |         |         |
+	    // |        |         |         |         |         | 				|         |         |         |         |         |
+	    //                              |  ENTER  |   BASE  |				|  FUNC   |  SPACE  |
+	    // --------------------------------------------------------------------------------------------------------------------
+	        macro_layer {
+	    bindings = <
+	    &kp xxx    &kp xxx    &kp xxx   &kp xxx   &kp xxx     		&kp xxx       &kp xxx       &kp xxx       &kp xxx       &unstick
+	    &agave     &sol       &sui      &sus      &sua   			&kp xxx       &kp xxx       &kp xxx       &kp xxx       &kp xxx 
+	    &kp xxx    &kp xxx    &kp xxx   &kp xxx   &kp xxx     		&kp xxx       &kp xxx       &kp xxx       &kp xxx       &kp xxx  
+			  	                        &kp RET   &to BASE  		&to FUNC    &kp SPACE 
+	    >;
+	  };	
+	    // Functions
+        // --------------------------------------------------------------------------------------------------------------------
+        // |   F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |   F10   |
+	    // |        |         |         |         |         |               |         |         |         |   F11   |   F12   |
+	    // |        |         |         |         |         | 				|         |         |         |         |         |
+	    //                              |  ENTER  |   BASE  |				|    SET  |  SPACE  |
+	    // --------------------------------------------------------------------------------------------------------------------
+	        func_layer {
+	    bindings = <
+	    &kp F1    &kp F2    &kp F3    &kp F4    &kp F5  			&kp F6         &kp F7       &kp F8     &kp F9     &kp F10
+	    &kp xxx   &kp xxx   &kp xxx   &kp xxx   &kp xxx  			&kp xxx        &kp xxx      &kp xxx    &kp F11    &kp F12 
+	    &kp xxx   &kp xxx   &kp xxx   &kp xxx   &kp xxx  			&kp xxx        &kp xxx      &kp xxx    &kp xxx    &kp xxx   
+				                      &kp RET   &to BASE  			&to SETTINGS   &kp SPACE 
+	    >;
+	  };	
+        // Settings
+        // --------------------------------------------------------------------------------------------------------------------
+        // |BootLdr |         |         |  BT_CLR |  BT 0   |               |         |         |         |         |         |
+	    // |        |         |         |         |  BT 1   |               |         |         |         |         |         |
+	    // | BT_CLR | BT_NXT  | BT_PREV |         |  BT 2   | 				|         |         |         |         |         |
+	    //                              |  ENTER  |  BASE   |				|         |  SPACE  |
+	    // --------------------------------------------------------------------------------------------------------------------
+	        ble_layer {
+	    bindings = <
+	    &kp BL        &kp xxx     &kp xxx      &kp bTClr   &kp bT1 		    &kp xxx     &kp xxx      &kp xxx    &kp xxx     &kp xxx
+	    &kp xxx       &kp xxx     &kp xxx      &kp xxx     &kp bT2  		&kp xxx     &kp xxx      &kp xxx    &kp xxx     &kp xxx 
+	    &kp bTClr     &kp bTNxt   &kp bTPrv    &kp xxx     &kp bT3  		&kp xxx     &kp xxx      &kp xxx    &kp xxx     &kp xxx   
+				                               &kp RET     &to BASE 		&kp xxx     &kp SPACE 
+	    >;
+	  };	
+	};   
 };
