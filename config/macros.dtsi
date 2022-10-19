@@ -1,7 +1,7 @@
 
 compatible = "zmk,behavior-macro";
 
-#define MACRO(NAME, LABEL, BINDINGS) \
+#define MACRO(NAME, LABEL, (BINDINGS)) \
   macro_##NAME { \
     label = <LABEL>; \
     bindings = <BINDINGS>; \
