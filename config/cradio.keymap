@@ -18,7 +18,7 @@
     #define BASE 0
     #define NUM 1
     #define SYM 2
-    #define MACRO 3
+    #define MCRO 3
     #define FUNC 4
 	#define SETTINGS 5
 // -----------------
@@ -35,29 +35,26 @@
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
-
 macros {
     #include "macros.dtsi"
 };
-
 combos {
     #include "combos.dtsi"
 };
-
         keymap {
                 compatible = "zmk,keymap";
             // Base Layer 
             // --------------------------------------------------------------------------------------------------------------------
             // |   Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    | BkSPC P |
 		    // |   A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |  NUM L  |    ;    |
-		    // |   Z    |    X    |    C    |    V    |    B    | 				|    N    | MACRO M |    ,    |    .    |    /    |
+		    // |   Z    |    X    |    C    |    V    |    B    | 				|    N    | MCRO M |    ,    |    .    |    /    |
 		    //                              |  ENTER  |  LCMD   |				|  NUM    |  SPACE  |
 		    // --------------------------------------------------------------------------------------------------------------------       
        	    base_layer {
 		    bindings = <
 		    &kp Q      &kp W        &kp E       &mt LA(SPACE) R &kp T 			 &kp Y     &kp U        &kp I    &kp O      &mt BSPC P 
 		    &kp A      &kp S        &kp D       &kp F           &kp G 			 &kp H     &kp J        &kp K    &lt NUM L  &kp QUOT
-		    &mt LSFT Z &mt LG(X) X  &mt LG(C) C &mt LG(V) V     &kp B		     &kp N     &lt MACRO M  &kp CMMA &kp DOT    &kp FSLH
+		    &mt LSFT Z &mt LG(X) X  &mt LG(C) C &mt LG(V) V     &kp B		     &kp N     &lt MCRO M  &kp CMMA &kp DOT    &kp FSLH
           				                          &kp RET         &kp LCMD   	 &to NUM   &kp SPACE 
 		    >;
 		  };
@@ -81,14 +78,14 @@ combos {
             // |   !    |    @    |    #    |    $    |    %    |               |    ^    |    &    |    *    |    (    |    )    |
 		    // |   `    |    ~    |    |    |    \    |    /    |               |         |         |    <    |    {    |    }    |
 		    // |        |         |         |         |         | 				|         |         |    >    |    [    |    ]    |
-		    //                              |  ENTER  |   BASE  |				|  MACRO  |  SPACE  |
+		    //                              |  ENTER  |   BASE  |				|  MCRO  |  SPACE  |
 		    // --------------------------------------------------------------------------------------------------------------------
 		        sym_layer {
 		    bindings = <
 		    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCT    			&kp CRRT   &kp AMPS     &kp STAR  &kp LPRN   &kp RPRN 
 		    &kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    xxx      xxx        &kp LT    &kp LBRC   &kp RBRC
 		    xxx        xxx        xxx        xxx        xxx        			    xxx      xxx        &kp GT    &kp LBKT   &kp RBKT
-					                         &kp RET    &to BASE  	    	    &to MACRO  &kp SPACE 
+					                         &kp RET    &to BASE  	    	    &to MCRO  &kp SPACE 
 		    >;
 		  };
             // Macro
