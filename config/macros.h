@@ -1,51 +1,39 @@
-/*
-compatible = "zmk,behavior-macro";
-
-
-#define MACRO(NAME, LABEL, BINDINGS) \
-  macro_##NAME { \
-    label = <LABEL>; \
-    bindings = <BINDINGS>; \
-  };
-
-MACRO(unstick, ZM_unstick, (&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI))
-MACRO(agave, ZM_agave, (&kp A &kp G &kp A &kp V &kp E &kp RET))
-MACRO(sol, ZM_sol, (&kp S &kp O &kp L &kp RET))
-MACRO(sui, ZM_sui, (&kp COLON &kp S &kp U &kp I))
-MACRO(sus, ZM_sus, (&kp COLON &kp S &kp U &kp S))
-MACRO(sua, ZM_sua, (&kp COLON &kp S &kp U &kp A))
-*/
-
 / { 
     macros {
-      compatible = "zmk,behavior-macro";
+      
         unstick: unstick {
             label = "ZM_unstick";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
         };
         agave: agave {
             label = "ZM_agave";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp A &kp G &kp A &kp V &kp E &kp RET>;
         };
         sol: sol {
             label = "ZM_sol";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp S &kp O &kp L &kp RET>;
         };
         sui: sui {
             label = "ZM_sui";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COLN &kp S &kp U &kp I>;
         };
         sus: sus {
             label = "ZM_sus";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COLN &kp S &kp U &kp S>;
         };
         sua: sua {
             label = "ZM_sua";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COLN &kp S &kp U &kp A>;
         };
