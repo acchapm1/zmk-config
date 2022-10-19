@@ -62,6 +62,31 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+		am: alpha_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_MT";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        as: alpha_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_SFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        tde: tap_dance_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp> Q, <&kp> ESC;
+        };
     };
 
 	macros {
@@ -83,7 +108,7 @@
 	    // --------------------------------------------------------------------------------------------------------------------       
         base_layer {
 	    bindings = <
-	    &kp Q      &kp W        &kp E       &mt LA(SPACE) R &kp T 			 &kp Y     &kp U        &kp I    &kp O      &mt BSPC P 
+	    &tde Q      &kp W        &kp E       &mt LA(SPACE) R &kp T 			 &kp Y     &kp U        &kp I    &kp O      &mt BSPC P 
 	    &kp A      &kp S        &kp D       &kp F           &kp G 			 &kp H     &kp J        &kp K    &lt NUM L  &kp QUOT
 	    &mt LSFT Z &mt LG(X) X  &mt LG(C) C &mt LG(V) V     &kp B		     &kp N     &lt MCRO M  &kp CMMA &kp DOT    &kp FSLH
       				                          &kp RET       &kp LCMD   	     &to NUM   &kp SPACE 
