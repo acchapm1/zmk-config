@@ -12,7 +12,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "sweep.h"
 
 // Layer definitions
     #define BASE 0
@@ -31,7 +30,6 @@
 &sk {
     release-after-ms = <2000>;
     quick-release;
-    /delete-property/ ignore-modifiers;
 };
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
@@ -40,6 +38,25 @@
 // Aliases
 	#define CW &caps_word
 	#define BL &bootloader
+    #define xxx &none
+    #define ___ &trans
+    #define iHOMsel RG(RS(LEFT))
+    #define iENDsel RG(RS(RIGHT))
+    #define selAll RG(A)
+    #define mtRight LC(RIGHT)
+    #define mtLeft LC(LEFT)
+    #define coPy LG(C)
+    #define pasTE LG(V)
+    #define raY LA(SPACE)
+    #define reDo RG(RS(Z))
+    #define unDo RG(Z)
+    #define tmuxKey L(B)
+    #define bT1 BT_SEL 0
+    #define bT2 BT_SEL 1
+    #define bT3 BT_SEL 2
+    #define bTNxt BT_NXT
+    #define bTPrv BT_PRV
+    #define bTClr BT_CLR
 // -----------------
 
 / {
