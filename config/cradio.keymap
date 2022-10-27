@@ -213,7 +213,7 @@
 		    >;
 		  };
          // Macro
-		        macro_layer {
+		    macro_layer {
 		    bindings = <
          //╭─────────────────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────────────────╮
          //│          │           │          │              │            │   │            │           │           │           │  unstick   │
@@ -228,7 +228,7 @@
 		    >;
 		  };	
 		 // Functions
-		        func_layer {
+		    func_layer {
 		    bindings = <
          //╭─────────────────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────────────────╮
          //│   F1    │    F2    │    F3     │       F4   │      F5       │   │    F6       │    F7     │    F8    │     F9    │     F10    │
@@ -242,20 +242,19 @@
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
 		    >;
 		  };	
-            // Settings
-            // --------------------------------------------------------------------------------------------------------------------
-            // │BootLdr │         │         │  BT_CLR │  BT 0   │               │         │         │         │         │         │
-		    // │        │         │         │         │  BT 1   │               │         │         │         │         │         │
-		    // │ BT_CLR │ BT_NXT  │ BT_PREV │         │  BT 2   │ 				│         │         │         │         │         │
-		    //                              │  ENTER  │  BASE   │				│   None  │  SPACE  │
-		    // --------------------------------------------------------------------------------------------------------------------
-		        ble_layer {
+         // Settings
+		    ble_layer {
 		    bindings = <
          //╭─────────────────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────────────────╮
-		    &kp BL      &none       &none       &bt BT_CLR  &bt bT0 			&none      &none    &none    &none     &none
-		    &none       &none       &none       &none       &bt bT1  		    &none      &none    &none    &none     &none 
-		    &bt bTClr   &bt bTNxt   &bt bTPrv   &none       &bt bT2  		    &none      &none    &none    &none     &none   
-					                            &kp RET     &to BASE 			&none      &kp SPACE 
+         //│ BootLdr │           │          │     BT_CLR  │      BT 0    │   │           │            │           │           │            │
+		     &kp BL     &none     &none        &bt BT_CLR       &bt bT0 		&none       &none         &none       &none        &none
+         //│         │           │          │             │      BT 1    │   │           │            │           │           │            │
+		      &none      &none       &none       &none         &bt bT1  	    &none       &none         &none       &none        &none 
+         //│  BT_CLR │   BT_NXT  │  BT_PREV │             │      BT 2    │ 				  │         │         │         │         │         │ 
+		    &bt bTClr   &bt bTNxt  &bt bTPrv    &none          &bt bT2  	    &none       &none         &none       &none        &none
+         //╰────────────────────────────────╮    ENTER    │      BASE    │   │           │     SPACE   ╭───────────────────────────────────╯ 
+					                            &kp RET        &to BASE 		&none       &kp SPACE 
+         //                                 ╰────────────────────────────╯   ╰─────────────────────────╯
 		    >;
 		  };	
     };    
