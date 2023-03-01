@@ -164,6 +164,12 @@
             key-positions = <22 1>;
             bindings = <&caps_word>;
         };
+            // V B
+            combo_backspace {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&kp BACKSPACE>;
+        };
     };
         keymap {
             compatible = "zmk,keymap";
@@ -172,11 +178,11 @@
             bindings = <
          //╭─────────────────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────────────────╮
          //│   Q      │    W       │    E      │    R       │    T       │   │    Y      │    U        │    I      │    O     │  BkSPC P   │
-		    &kp Q      &kp W        &kp E       &mt LA(SPACE) R &kp T 			 &kp Y     &kp U        &kp I    &kp O      &mt BACKSPACE P 
-         //│   A      │    S       │    D      │    F      │    G        │   │    H      │    J        │    K      │  NUM L   │    ;       │
-		    &kp A      &kp S        &kp D       &kp F           &kp G 			 &kp H     &kp J        &kp K    &lt NUM L    &kp QUOT
-         //│   Z      │      X     │      C    │     V     │      B      │   │     N     │   MACR M    │     ,     │      .   │      /     │
-		    &mt LSFT Z &mt LG(X) X  &mt LG(C) C &mt LG(V) V     &kp B		     &kp N     &lt MACR M  &kp CMMA &kp DOT       &kp FSLH
+		    &kp Q      &kp W        &kp E         &kp R         &kp T 			 &kp Y     &kp U        &kp I         &kp O        &kp P 
+         //│   A      │    S       │    D      │    F      │    G        │   │    H      │    J        │    K      │  NUM L   │    "       │
+		    &kp A      &kp S        &kp D         &kp F         &kp G 			 &kp H     &kp J        &kp K         &kp L     &kp QUOT
+         //│   Z      │      X     │      C    │     V     │      B      │   │     N     │     M       │     ,     │      .   │      /     │
+		    &kp Z       &kp X        &kp C       &kp V     &kp B	   	         &kp N       &kp M       &kp CMMA     &kp DOT    &kp FSLH
          //╰────────────────────────────────╮     30              31     │   │     32           33     ╭───────────────────────────────────╯   
           				                           &kp RET     &kp LCMD   	     &to NUM   &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
