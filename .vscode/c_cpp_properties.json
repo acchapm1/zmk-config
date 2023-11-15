@@ -4,7 +4,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/Users/acchapm1/keyb/ZMK/zmk-config-sweep"
+                "/Users/acchapm1/newkeyb/zmk-config"
             ],
             "defines": [],
             "macFrameworkPath": [],
