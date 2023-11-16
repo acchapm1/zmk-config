@@ -180,11 +180,11 @@
          //│   Q      │    W       │    E      │    R      │     T       │   │    Y      │    U        │    I      │    O     │      P     │
 		     &kp Q       &kp W        &kp E        &kp R       &kp T 			 &kp Y      &kp U         &kp I       &kp O        &kp P 
          //│   A      │    S       │    D      │    F      │    G        │   │    H      │    J        │    K      │    L     │     "      │
-		     &kp A       &kp S        &kp D        &kp F      &kp G 			&kp H       &kp J         &kp K       &kp L      &kp SQT
+		     &kp A       &kp S        &kp D        &kp F      &kp G 			&kp H       &kp J         &kp K       &kp L      &kp QUOT
          //│   Z      │      X     │      C    │     V     │      B      │   │     N     │     M       │     ,     │      .   │      /     │
-		     &kp Z       &kp X        &kp C       &kp V        &kp B	   	     &kp N       &kp M       &kp COMMA     &kp DOT    &kp FSLH
-         //╰────────────────────────────────╮     RETURN   |  Raycast    │   │     NUM   |    SPACE    ╭───────────────────────────────────╯   
-          				                        &kp RETURN     &kp raY  	        &to NUM    &kp SPACE 
+		     &kp Z       &kp X        &kp C       &kp V     &kp B	   	         &kp N       &kp M       &kp CMMA     &kp DOT    &kp FSLH
+         //╰────────────────────────────────╮     ENTER    |    LGUI     │   │     NUM   |    SPACE    ╭───────────────────────────────────╯   
+          				                         &kp RET     &kp LCMD   	     &to NUM   &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
 		    >;
 		  };
@@ -193,9 +193,9 @@
 		    bindings = <
          //╭─────────────────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────────────────╮
          //│     1     │    2    │     3    │       4       │       5    │   │    6       │    7       │    8      │    9      │    0      │
-		      &kp N1      &kp N2     &kp N3      &kp N4       &kp N5   		    &kp N6       &kp N7        &kp N8     &kp N9      &kp N0 
+		    &kp N1     &kp N2      &kp N3      &kp N4       &kp N5   		    &kp N6      &kp N7       &kp N8      &kp N9       &kp N0 
 		 //│  ALT      │   GUI   │   SHIFT  │         CRTL  │   RALT     │   │  Left      │    Down    │     UP    │    Right  │      "    │
-		     &sk LALT   &sk LCMD    &sk LSHFT   &sk LCTRL     &sk RALT 		    &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT    &kp DQT 
+		    &sk LALT   &sk LCMD    &sk LSHFT   &sk LCTL     &sk RALT 		    &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT    &kp DQT 
 		 //│ CapsWord  │         │          │      ESC      │     TAB    │ 	 │    ~       │      =     │      +    │      -    │      \    │
 		     &kp CW      &none     &none       &kp ESC        &kp TAB 	        &kp TILDE   &kp EQUAL    &kp PLUS    &kp MINUS    &kp BSLH 
          //╰────────────────────────────────╮    ENTER      │    BASE    │   │    SYM    │    SPACE    ╭───────────────────────────────────╯
@@ -207,12 +207,12 @@
 		    sym_layer {
 		    bindings = <
          //╭─────────────────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────────────────╮
-         //│     !     │     @     │    #    │         $    │       %    │   │    ^      │    &      │    *      │    (      │    )        │
-		      &kp EXCL     &kp AT   &kp HASH     &kp DLLR     &kp PRCNT    	   &kp CARET    &kp AMPS   &kp STAR    &kp LPAR     &kp RPAR 
-		 //│   `       │    ~      │    │    │    \         │       /    │   │           │           │    <      │    {      │    }        │
-		    &kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    &none      &none        &kp LT     &kp LBRC     &kp RBRC
-		 //│           │           │         │              │            │ 	 │           │           │    >      │     [     │    ]        │
-		      &none      &none      &none      &none      &none        			&none      &none        &kp GT      &kp LBKT    &kp RBKT
+         //│     !     │      @    │    #    │         $    │       %    │   │    ^      │    &      │    *      │    (      │    )        │
+		    &kp EXCL     &kp AT      &kp HASH    &kp DLLR     &kp PRCT    		&kp CRRT    &kp AMPS   &kp STAR    &kp LPRN     &kp RPRN 
+		 //│   `       │    ~      │    │    │    \         │       /    │   │         │         │    <    │    {    │    }    │
+		    &kp GRAVE  &kp TILDE  &kp PIPE   &kp BSLH   &kp FSLH 			    &none      &none        &kp LT    &kp LBRC   &kp RBRC
+		 //│           │           │         │              │            │ 	 │         │         │    >    │    [    │    ]    │
+		      &none      &none      &none      &none      &none        			&none      &none        &kp GT    &kp LBKT   &kp RBKT
          //╰────────────────────────────────╮    ENTER      │    BASE    │   │    MACR   │    SPACE    ╭───────────────────────────────────╯
 					                         &kp RET    &to BASE  	    	    &to MACR  &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
@@ -223,12 +223,12 @@
 		    bindings = <
          //╭─────────────────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────────────────╮
          //│          │           │          │              │            │   │            │           │           │           │  unstick   │
-		      &none       &none       &none       &none         &none     		  &none       &none       &none       &none      &unstick
+		    &none       &none       &none       &none         &none     		  &none       &none       &none       &none       &unstick
 		 //│   Agave  │    Sol    │   :SUI   │    :SUS      │    :SUA    │   │            │           │           │           │            │
-		      &agave      &sol        &sui        &sus          &sua   			  &none       &none       &none       &none       &none 
+		    &agave      &sol        &sui        &sus          &sua   			  &none       &none       &none       &none       &none 
 		 //│          │           │          │              │            │ 	 │            │           │           │           │            │ 
-		      &none       &none       &none       &none         &none     		  &none       &none       &none       &none       &none  
-         //╰────────────────────────────────╮     ENTER     │    BASE    │   │    FUNC    │   SPACE    ╭───────────────────────────────────╯
+		    &none       &none       &none       &none         &none     		  &none       &none       &none       &none       &none  
+         //╰────────────────────────────────╮    ENTER      │    BASE    │   │    FUNC    │   SPACE    ╭───────────────────────────────────╯
 				  	                            &kp RET        &to BASE  	    &to FUNC    &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
 		    >;
