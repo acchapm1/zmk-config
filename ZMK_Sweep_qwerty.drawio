@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-11-16T23:00:12.968Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.3 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="v6iPx7CQD3kq34foIPJz" version="22.0.3" type="device">
+<mxfile host="Electron" modified="2023-11-17T15:56:08.072Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.3 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="jXttxGwfWUCO5Sfx-fjt" version="22.0.3" type="device">
   <diagram id="4mf2qkvwDCQgQ1x4O-1k" name="Page-1">
-    <mxGraphModel dx="1818" dy="1072" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1158" dy="340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -361,15 +361,16 @@
         <mxCell id="qOO70KsoDbuKheBEqoZG-146" value="Combo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Verdana;fontSize=13;fontColor=#6906F9;fontStyle=2" parent="1" vertex="1">
           <mxGeometry x="610" y="297.5" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="CXPlqL_InlzVmIfdUQnU-20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FFB86C;strokeWidth=2;fontSize=12;fontColor=#AFB9C7;" parent="1" source="qOO70KsoDbuKheBEqoZG-151" target="CXPlqL_InlzVmIfdUQnU-15" edge="1">
+        <mxCell id="CXPlqL_InlzVmIfdUQnU-20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FFB86C;strokeWidth=2;fontSize=12;fontColor=#AFB9C7;exitX=0.455;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="qOO70KsoDbuKheBEqoZG-151" target="CXPlqL_InlzVmIfdUQnU-15" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="110" y="478" />
+              <mxPoint x="50" y="478" />
             </Array>
+            <mxPoint x="50" y="520" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="qOO70KsoDbuKheBEqoZG-151" value="&lt;div&gt;&lt;b&gt;Sticky Modifiers&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;i&gt;From left to right:&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;i&gt;ALT, OS, SHIFT, CTRL, RALT&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Verdana;fontSize=13;fontColor=#FF8000;" parent="1" vertex="1">
-          <mxGeometry x="90" y="585" width="110" height="90" as="geometry" />
+          <mxGeometry y="530" width="110" height="90" as="geometry" />
         </mxCell>
         <mxCell id="qOO70KsoDbuKheBEqoZG-153" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=17;fontFamily=Verdana;fontStyle=1;fontColor=#AFB9C7;fillColor=#383E47;rounded=1;strokeColor=#60A917;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="150" y="984" width="40" height="40" as="geometry" />
@@ -777,16 +778,16 @@
         <mxCell id="NwJ2nZEgwaM93QG8pWkQ-2" value="Combo Q &amp;amp; W" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Verdana;fontSize=13;fontColor=#6906F9;fontStyle=2" parent="1" vertex="1">
           <mxGeometry y="143" width="110" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OMmeLFsKnKyaGc8RqxQ4-3" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Caps Word&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fontFamily=Verdana;fontStyle=1;fontColor=#FFFFFF;fillColor=#A769D1;rounded=1;strokeColor=#FFB86C;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="OMmeLFsKnKyaGc8RqxQ4-3" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Caps Word&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fontFamily=Verdana;fontStyle=1;fontColor=#FFFFFF;fillColor=#A769D1;rounded=1;strokeColor=#FFB86C;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="-50" y="370" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="OMmeLFsKnKyaGc8RqxQ4-4" value="Combo C &amp;amp; W" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Verdana;fontSize=13;fontColor=#6906F9;fontStyle=2" vertex="1" parent="1">
+        <mxCell id="OMmeLFsKnKyaGc8RqxQ4-4" value="Combo C &amp;amp; W" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Verdana;fontSize=13;fontColor=#6906F9;fontStyle=2" parent="1" vertex="1">
           <mxGeometry y="378" width="110" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OMmeLFsKnKyaGc8RqxQ4-1" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;BSPC&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fontFamily=Verdana;fontStyle=1;fontColor=#FFFFFF;fillColor=#A769D1;rounded=1;strokeColor=#FFB86C;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="OMmeLFsKnKyaGc8RqxQ4-1" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;BSPC&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fontFamily=Verdana;fontStyle=1;fontColor=#FFFFFF;fillColor=#A769D1;rounded=1;strokeColor=#FFB86C;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="-50" y="322" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="OMmeLFsKnKyaGc8RqxQ4-2" value="Combo V &amp;amp; B" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Verdana;fontSize=13;fontColor=#6906F9;fontStyle=2" vertex="1" parent="1">
+        <mxCell id="OMmeLFsKnKyaGc8RqxQ4-2" value="Combo V &amp;amp; B" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Verdana;fontSize=13;fontColor=#6906F9;fontStyle=2" parent="1" vertex="1">
           <mxGeometry y="332" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="w3EMyoi_lbb4Dbg5Ekqm-8" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;LALT&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fontFamily=Verdana;fontStyle=1;fontColor=#FFFFFF;fillColor=#A769D1;rounded=1;strokeColor=#FFB86C;strokeWidth=2;" parent="1" vertex="1">
