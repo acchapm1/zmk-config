@@ -57,6 +57,10 @@
     #define bTNxt BT_NXT
     #define bTPrv BT_PRV
     #define bTClr BT_CLR
+//    #define Lth1 &mt raY RETURN
+//    #define Lth2 &mt SYM BACKSPACE
+//    #define Rth1 &mt 
+//    #define Rth2 
 // -----------------
 
 / { 
@@ -183,8 +187,8 @@
 		     &kp A       &kp S        &kp D        &kp F      &kp G 			&kp H       &kp J         &kp K       &kp L      &kp SQT
          //│   Z      │      X     │      C    │     V     │      B      │   │     N     │     M       │     ,     │      .   │      /     │
 		     &kp Z       &kp X        &kp C       &kp V        &kp B	   	     &kp N       &kp M       &kp COMMA     &kp DOT    &kp FSLH
-         //╰────────────────────────────────╮     RETURN   |  Raycast    │   │    NUM    |    SPACE    ╭───────────────────────────────────╯   
-          				                        &kp RETURN     &kp raY  	     &to NUM    &kp SPACE 
+         //╰────────────────────────────────╮     Enter    |  Raycast    │   │    NUM    |    SPACE    ╭───────────────────────────────────╯   
+          				                        &kp ENTER     &kp raY  	     &to NUM    &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
 		    >;
 		  };
@@ -199,7 +203,7 @@
 		 //│ CapsWord  │         │          │      ESC      │     TAB    │ 	 │    ~       │      =     │      +    │      -    │      \    │
 		     &kp CW      &none     &none       &kp ESC        &kp TAB 	        &kp TILDE   &kp EQUAL    &kp PLUS    &kp MINUS    &kp BSLH 
          //╰────────────────────────────────╮    ENTER      │    BASE    │   │    SYM    │    SPACE    ╭───────────────────────────────────╯
-					                           &kp RET        &to BASE   	    &to SYM     &kp SPACE 
+					                           &kp ENTER       &to BASE   	    &to SYM     &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯                                            
 		    >;
 		  };
@@ -214,7 +218,7 @@
 		 //│           │           │         │              │            │ 	 │           │           │    >      │     [     │    ]        │
 		      &none      &none      &none      &none      &none        			&none      &none        &kp GT      &kp LBKT    &kp RBKT
          //╰────────────────────────────────╮    ENTER      │    BASE    │   │    MACR   │    SPACE    ╭───────────────────────────────────╯
-					                         &kp RET    &to BASE  	    	    &to MACR  &kp SPACE 
+					                            &kp ENTER    &to BASE  	    	    &to MACR  &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
 		    >;
 		  };
@@ -229,7 +233,7 @@
 		 //│          │           │          │              │            │ 	 │            │           │           │           │            │ 
 		      &none       &none       &none       &none         &none     		  &none       &none       &none       &none       &none  
          //╰────────────────────────────────╮     ENTER     │    BASE    │   │    FUNC    │   SPACE    ╭───────────────────────────────────╯
-				  	                            &kp RET        &to BASE  	    &to FUNC    &kp SPACE 
+				  	                            &kp ENTER      &to BASE  	    &to FUNC    &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
 		    >;
 		  };	
@@ -244,7 +248,7 @@
          //│         │          │           │            │               │ 	 │             │           │          │           │            │ 
 		    &none       &none       &none       &none       &none  			      &none      &none      &none        &none      &none   
          //╰────────────────────────────────╮    ENTER      │    BASE    │   │    SETTINGS │   SPACE   ╭───────────────────────────────────╯  
-					                            &kp RET      &to BASE  		  &to SETTINGS  &kp SPACE 
+					                            &kp ENTER      &to BASE  		  &to SETTINGS  &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯ 
 		    >;
 		  };	
@@ -259,7 +263,7 @@
          //│  BT_CLR │   BT_NXT  │  BT_PREV │             │      BT 2    │ 				  │         │         │         │         │         │ 
 		    &bt bTClr   &bt bTNxt  &bt bTPrv    &none          &bt bT2  	    &none       &none         &none       &none        &none
          //╰────────────────────────────────╮    ENTER    │      BASE    │   │           │     SPACE   ╭───────────────────────────────────╯ 
-					                            &kp RET        &to BASE 		&none       &kp SPACE 
+					                            &kp ENTER        &to BASE 		&none       &kp SPACE 
          //                                 ╰────────────────────────────╯   ╰─────────────────────────╯
 		    >;
 		  };	
